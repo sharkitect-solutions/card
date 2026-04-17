@@ -286,105 +286,70 @@
             color: var(--white);
         }
 
-        /* HubSpot form dark theme overrides */
-        .form-modal .hs-form fieldset {
-            max-width: 100% !important;
+        /* Custom form styles */
+        .form-field {
+            margin-bottom: 16px;
         }
 
-        .form-modal .hs-form .hs-input {
-            width: 100% !important;
-            background: rgba(255, 255, 255, 0.12) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2) !important;
-            border-radius: 6px !important;
-            color: var(--white) !important;
-            font-family: 'Montserrat', sans-serif !important;
-            font-size: 14px !important;
-            padding: 10px 12px !important;
-            transition: border-color 0.2s !important;
+        .form-field label {
+            display: block;
+            color: var(--electric-blue);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
         }
 
-        .form-modal .hs-form .hs-input:focus {
-            outline: none !important;
-            border-color: var(--electric-blue) !important;
-            background: rgba(255, 255, 255, 0.16) !important;
+        .form-field label .required {
+            color: #e74c3c;
         }
 
-        .form-modal .hs-form .hs-input::placeholder {
-            color: rgba(255, 255, 255, 0.4) !important;
+        .form-field input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            padding: 12px 14px;
+            transition: border-color 0.2s, background 0.2s;
+            outline: none;
         }
 
-        .form-modal .hs-form label,
-        .form-modal .hs-form label span,
-        .form-modal .hs-form .hs-form-field > label,
-        .form-modal .hs-form .hs-form-field > label span {
-            color: var(--electric-blue) !important;
-            font-family: 'Montserrat', sans-serif !important;
-            font-size: 13px !important;
-            font-weight: 600 !important;
-            margin-bottom: 4px !important;
+        .form-field input:focus {
+            border-color: var(--electric-blue);
+            background: rgba(255, 255, 255, 0.16);
         }
 
-        .form-modal .hs-form .hs-error-msgs label {
-            color: #e74c3c !important;
-            font-size: 12px !important;
+        .form-field input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
         }
 
-        .form-modal .hs-form .hs-form-field {
-            margin-bottom: 16px !important;
+        .form-submit {
+            width: 100%;
+            margin-top: 8px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--electric-blue), #1E96C8);
+            border: none;
+            border-radius: 8px;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.5px;
         }
 
-        .form-modal .hs-form .hs-submit .actions {
-            text-align: center !important;
-            padding-top: 8px !important;
+        .form-submit:hover {
+            background: linear-gradient(135deg, #1E96C8, #1880AB);
+            box-shadow: 0 4px 20px rgba(41, 171, 226, 0.35);
         }
 
-        .form-modal .hs-form .hs-button {
-            background: linear-gradient(135deg, var(--electric-blue), #1E96C8) !important;
-            border: none !important;
-            border-radius: 8px !important;
-            color: var(--white) !important;
-            font-family: 'Montserrat', sans-serif !important;
-            font-size: 14px !important;
-            font-weight: 600 !important;
-            padding: 12px 32px !important;
-            cursor: pointer !important;
-            transition: all 0.2s ease !important;
-            letter-spacing: 0.5px !important;
-            width: 100% !important;
-        }
-
-        .form-modal .hs-form .hs-button:hover {
-            background: linear-gradient(135deg, #1E96C8, #1880AB) !important;
-            box-shadow: 0 4px 20px rgba(41, 171, 226, 0.35) !important;
-        }
-
-        .form-modal .hs-form .hs-richtext {
-            color: var(--silver) !important;
-            font-size: 12px !important;
-        }
-
-        .form-modal .hs-form .hs-richtext p {
-            color: var(--silver) !important;
-        }
-
-        .form-modal .hs-form .legal-consent-container .hs-form-booleancheckbox label {
-            color: var(--silver) !important;
-            font-size: 11px !important;
-        }
-
-        .form-modal .hs-form .legal-consent-container .hs-form-booleancheckbox label span {
-            color: var(--silver) !important;
-        }
-
-        .form-modal .hs-form .legal-consent-container p {
-            color: var(--silver) !important;
-        }
-
-        .form-modal .submitted-message {
-            color: var(--electric-blue) !important;
-            font-family: 'Montserrat', sans-serif !important;
-            text-align: center !important;
-            padding: 20px 0 !important;
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
         }
 
         .contact-link svg {
@@ -609,34 +574,82 @@
         <div class="form-modal" onclick="event.stopPropagation()">
             <button class="form-close" onclick="toggleForm()">&times;</button>
             <h3>SHARE YOUR INFO</h3>
-            <div id="hubspotFormContainer"></div>
+            <form id="contactForm" onsubmit="submitForm(event)">
+                <div class="form-field">
+                    <label for="firstname">First name</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="First name">
+                </div>
+                <div class="form-field">
+                    <label for="lastname">Last name</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Last name">
+                </div>
+                <div class="form-field">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-field">
+                    <label for="phone">Phone number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone number">
+                </div>
+                <div class="form-field">
+                    <label for="company">Company name</label>
+                    <input type="text" id="company" name="company" placeholder="Company name">
+                </div>
+                <button type="submit" class="form-submit" id="formSubmitBtn">Submit</button>
+            </form>
+            <div id="formSuccess" style="display:none; text-align:center; padding:30px 0;">
+                <p style="color:#29ABE2; font-size:16px; font-weight:600; margin-bottom:8px;">Thank you!</p>
+                <p style="color:#C7CCD4; font-size:14px;">I'll be in touch soon.</p>
+            </div>
         </div>
     </div>
 
-    <!-- HubSpot Forms SDK -->
-    <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
-
     <script>
-        // Load HubSpot form into modal
-        var hsFormLoaded = false;
-        function loadHubSpotForm() {
-            if (hsFormLoaded) return;
-            hbspt.forms.create({
-                portalId: "244469204",
-                formId: "93b905a6-6ceb-4394-a756-2246e0588e2e",
-                region: "na2",
-                target: "#hubspotFormContainer",
-                css: 'body { background: transparent !important; } label, label span { color: #29ABE2 !important; font-family: Montserrat, sans-serif !important; font-weight: 600 !important; } .hs-input { background: rgba(255,255,255,0.12) !important; border: 1px solid rgba(255,255,255,0.2) !important; border-radius: 6px !important; color: #FFFFFF !important; } .hs-input:focus { border-color: #29ABE2 !important; background: rgba(255,255,255,0.16) !important; } .hs-button { background: linear-gradient(135deg, #29ABE2, #1E96C8) !important; border: none !important; border-radius: 8px !important; color: #FFFFFF !important; font-family: Montserrat, sans-serif !important; font-weight: 600 !important; padding: 12px 32px !important; width: 100% !important; cursor: pointer !important; } .legal-consent-container span, .legal-consent-container p, .hs-richtext p { color: #C7CCD4 !important; } .hs-error-msgs label, .hs-error-msgs label span { color: #e74c3c !important; }'
-            });
-            hsFormLoaded = true;
-        }
-
         function toggleForm() {
             var overlay = document.getElementById('formOverlay');
             overlay.classList.toggle('active');
-            if (overlay.classList.contains('active')) {
-                loadHubSpotForm();
-            }
+        }
+
+        function submitForm(e) {
+            e.preventDefault();
+            var btn = document.getElementById('formSubmitBtn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            var data = {
+                fields: [
+                    { name: 'firstname', value: document.getElementById('firstname').value },
+                    { name: 'lastname', value: document.getElementById('lastname').value },
+                    { name: 'email', value: document.getElementById('email').value },
+                    { name: 'phone', value: document.getElementById('phone').value },
+                    { name: 'company', value: document.getElementById('company').value }
+                ],
+                context: {
+                    pageUri: window.location.href,
+                    pageName: 'Digital Business Card'
+                }
+            };
+
+            fetch('https://api.hsforms.com/submissions/v3/integration/submit/244469204/93b905a6-6ceb-4394-a756-2246e0588e2e', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(function(response) {
+                if (response.ok) {
+                    document.getElementById('contactForm').style.display = 'none';
+                    document.getElementById('formSuccess').style.display = 'block';
+                } else {
+                    btn.textContent = 'Submit';
+                    btn.disabled = false;
+                    alert('Something went wrong. Please try again.');
+                }
+            })
+            .catch(function() {
+                btn.textContent = 'Submit';
+                btn.disabled = false;
+                alert('Something went wrong. Please try again.');
+            });
         }
 
         function saveContact() {
