@@ -645,23 +645,21 @@
             btn.textContent = 'Sending...';
             btn.disabled = true;
 
-            var data = {
-                fields: [
+            var fields = [
                     { name: 'firstname', value: document.getElementById('firstname').value },
                     { name: 'lastname', value: document.getElementById('lastname').value },
                     { name: 'email', value: document.getElementById('email').value },
                     { name: 'phone', value: document.getElementById('phone').value },
                     { name: 'company', value: document.getElementById('company').value }
-                ],
+            ];
+            // Remove empty fields
+            fields = fields.filter(function(f) { return f.value !== ''; });
+
+            var data = {
+                fields: fields,
                 context: {
                     pageUri: window.location.href,
                     pageName: 'Digital Business Card'
-                },
-                legalConsentOptions: {
-                    consent: {
-                        consentToProcess: true,
-                        text: 'By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided.'
-                    }
                 }
             };
 
