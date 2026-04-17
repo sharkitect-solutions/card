@@ -352,6 +352,29 @@
             cursor: not-allowed;
         }
 
+        .form-consent {
+            margin-bottom: 16px;
+        }
+
+        .form-consent label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .form-consent input[type="checkbox"] {
+            margin-top: 3px;
+            flex-shrink: 0;
+            accent-color: var(--electric-blue);
+        }
+
+        .form-consent span {
+            color: var(--silver);
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
         .contact-link svg {
             width: 18px;
             height: 18px;
@@ -595,6 +618,12 @@
                     <label for="company">Company name</label>
                     <input type="text" id="company" name="company" placeholder="Company name">
                 </div>
+                <div class="form-consent">
+                    <label>
+                        <input type="checkbox" id="consent" required>
+                        <span>By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided (e.g., scheduling, updates). Consent is not required for purchase. Reply STOP to opt out.</span>
+                    </label>
+                </div>
                 <button type="submit" class="form-submit" id="formSubmitBtn">Submit</button>
             </form>
             <div id="formSuccess" style="display:none; text-align:center; padding:30px 0;">
@@ -627,6 +656,19 @@
                 context: {
                     pageUri: window.location.href,
                     pageName: 'Digital Business Card'
+                },
+                legalConsentOptions: {
+                    consent: {
+                        consentToProcess: true,
+                        text: 'By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided (e.g., scheduling, updates). Consent is not required for purchase. Reply STOP to opt out.',
+                        communications: [
+                            {
+                                value: true,
+                                subscriptionTypeId: 999,
+                                text: 'I authorize Sharkitect Digital to send me recurring automated informational text messages.'
+                            }
+                        ]
+                    }
                 }
             };
 
@@ -640,12 +682,16 @@
                     document.getElementById('contactForm').style.display = 'none';
                     document.getElementById('formSuccess').style.display = 'block';
                 } else {
-                    btn.textContent = 'Submit';
-                    btn.disabled = false;
-                    alert('Something went wrong. Please try again.');
+                    return response.json().then(function(err) {
+                        console.error('HubSpot error:', err);
+                        btn.textContent = 'Submit';
+                        btn.disabled = false;
+                        alert('Something went wrong. Please try again.');
+                    });
                 }
             })
-            .catch(function() {
+            .catch(function(err) {
+                console.error('Network error:', err);
                 btn.textContent = 'Submit';
                 btn.disabled = false;
                 alert('Something went wrong. Please try again.');
