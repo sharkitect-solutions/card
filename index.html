@@ -313,11 +313,14 @@
             color: rgba(255, 255, 255, 0.4) !important;
         }
 
-        .form-modal .hs-form label {
-            color: var(--white) !important;
+        .form-modal .hs-form label,
+        .form-modal .hs-form label span,
+        .form-modal .hs-form .hs-form-field > label,
+        .form-modal .hs-form .hs-form-field > label span {
+            color: var(--electric-blue) !important;
             font-family: 'Montserrat', sans-serif !important;
             font-size: 13px !important;
-            font-weight: 500 !important;
+            font-weight: 600 !important;
             margin-bottom: 4px !important;
         }
 
@@ -606,7 +609,6 @@
         <div class="form-modal" onclick="event.stopPropagation()">
             <button class="form-close" onclick="toggleForm()">&times;</button>
             <h3>SHARE YOUR INFO</h3>
-            <p class="form-subtitle">I'll reach out to you personally.</p>
             <div id="hubspotFormContainer"></div>
         </div>
     </div>
