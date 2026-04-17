@@ -645,26 +645,16 @@
             btn.textContent = 'Sending...';
             btn.disabled = true;
 
-            var fields = [
-                    { name: 'firstname', value: document.getElementById('firstname').value },
-                    { name: 'lastname', value: document.getElementById('lastname').value },
-                    { name: 'email', value: document.getElementById('email').value },
-                    { name: 'phone', value: document.getElementById('phone').value },
-                    { name: 'company', value: document.getElementById('company').value },
-                    { name: 'sms_optin', value: document.getElementById('consent').checked ? 'true' : 'false' }
-            ];
-            // Remove empty optional fields (keep sms_optin always)
-            fields = fields.filter(function(f) { return f.value !== '' || f.name === 'sms_optin'; });
-
             var data = {
-                fields: fields,
-                context: {
-                    pageUri: window.location.href,
-                    pageName: 'Digital Business Card'
-                }
+                firstname: document.getElementById('firstname').value,
+                lastname: document.getElementById('lastname').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                sms_optin: document.getElementById('consent').checked
             };
 
-            fetch('https://api.hsforms.com/submissions/v3/integration/submit/244469204/93b905a6-6ceb-4394-a756-2246e0588e2e', {
+            fetch('https://sharkitect-solutions.app.n8n.cloud/webhook/card-lead', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
