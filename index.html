@@ -650,10 +650,11 @@
                     { name: 'lastname', value: document.getElementById('lastname').value },
                     { name: 'email', value: document.getElementById('email').value },
                     { name: 'phone', value: document.getElementById('phone').value },
-                    { name: 'company', value: document.getElementById('company').value }
+                    { name: 'company', value: document.getElementById('company').value },
+                    { name: 'sms_optin', value: document.getElementById('consent').checked ? 'true' : 'false' }
             ];
-            // Remove empty fields
-            fields = fields.filter(function(f) { return f.value !== ''; });
+            // Remove empty optional fields (keep sms_optin always)
+            fields = fields.filter(function(f) { return f.value !== '' || f.name === 'sms_optin'; });
 
             var data = {
                 fields: fields,
