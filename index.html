@@ -660,14 +660,7 @@
                 legalConsentOptions: {
                     consent: {
                         consentToProcess: true,
-                        text: 'By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided (e.g., scheduling, updates). Consent is not required for purchase. Reply STOP to opt out.',
-                        communications: [
-                            {
-                                value: true,
-                                subscriptionTypeId: 999,
-                                text: 'I authorize Sharkitect Digital to send me recurring automated informational text messages.'
-                            }
-                        ]
+                        text: 'By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided.'
                     }
                 }
             };
@@ -686,7 +679,7 @@
                         console.error('HubSpot error:', err);
                         btn.textContent = 'Submit';
                         btn.disabled = false;
-                        alert('Something went wrong. Please try again.');
+                        alert('Error: ' + (err.message || JSON.stringify(err)));
                     });
                 }
             })
