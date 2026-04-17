@@ -626,9 +626,9 @@
                 </div>
                 <button type="submit" class="form-submit" id="formSubmitBtn">Submit</button>
             </form>
-            <div id="formSuccess" style="display:none; text-align:center; padding:30px 0;">
-                <p style="color:#29ABE2; font-size:16px; font-weight:600; margin-bottom:8px;">Thank you!</p>
-                <p style="color:#808285; font-size:12px; margin-bottom:16px;">Don't forget to save my contact info too.</p>
+            <div id="formSuccess" style="display:none; text-align:center; padding:16px 0;">
+                <p style="font-family:Orbitron,sans-serif; color:#29ABE2; font-size:14px; font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:12px;">THANK YOU</p>
+                <p style="color:#C7CCD4; font-size:13px; margin-bottom:16px;">Don't forget to save my contact info too.</p>
                 <a href="https://www.sharkitectdigital.com/meetings/sharkitect/my_card" target="_blank" rel="noopener" style="display:inline-block; padding:12px 24px; background:linear-gradient(135deg,#29ABE2,#1E96C8); color:#fff; font-family:Montserrat,sans-serif; font-size:14px; font-weight:600; border-radius:8px; text-decoration:none; letter-spacing:0.5px;">Schedule a Meeting</a>
             </div>
         </div>
@@ -663,6 +663,7 @@
             .then(function(response) {
                 if (response.ok) {
                     document.getElementById('contactForm').style.display = 'none';
+                    document.querySelector('.form-modal h3').style.display = 'none';
                     document.getElementById('formSuccess').style.display = 'block';
                 } else {
                     return response.json().then(function(err) {
