@@ -188,40 +188,9 @@
             border-color: rgba(41, 171, 226, 0.35);
         }
 
-        .connect-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        .save-btn-primary {
             width: 100%;
-            padding: 14px 24px;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, var(--electric-blue), #1E96C8);
-            border: none;
-            border-radius: 8px;
-            color: var(--white);
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .connect-btn:hover {
-            background: linear-gradient(135deg, #1E96C8, #1880AB);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(41, 171, 226, 0.35);
-        }
-
-        .connect-btn:active {
-            transform: translateY(0);
-        }
-
-        .connect-btn svg {
-            width: 20px;
-            height: 20px;
-            fill: var(--white);
+            margin-bottom: 10px;
         }
 
         /* Form overlay */
@@ -293,8 +262,8 @@
 
         .form-modal .hs-form .hs-input {
             width: 100% !important;
-            background: rgba(255, 255, 255, 0.06) !important;
-            border: 1px solid rgba(41, 171, 226, 0.15) !important;
+            background: rgba(255, 255, 255, 0.12) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
             border-radius: 6px !important;
             color: var(--white) !important;
             font-family: 'Montserrat', sans-serif !important;
@@ -306,18 +275,18 @@
         .form-modal .hs-form .hs-input:focus {
             outline: none !important;
             border-color: var(--electric-blue) !important;
-            background: rgba(255, 255, 255, 0.08) !important;
+            background: rgba(255, 255, 255, 0.16) !important;
         }
 
         .form-modal .hs-form .hs-input::placeholder {
-            color: var(--slate) !important;
+            color: rgba(255, 255, 255, 0.4) !important;
         }
 
         .form-modal .hs-form label {
-            color: var(--silver) !important;
+            color: var(--white) !important;
             font-family: 'Montserrat', sans-serif !important;
             font-size: 13px !important;
-            font-weight: 400 !important;
+            font-weight: 500 !important;
             margin-bottom: 4px !important;
         }
 
@@ -356,13 +325,25 @@
         }
 
         .form-modal .hs-form .hs-richtext {
-            color: var(--slate) !important;
+            color: var(--silver) !important;
             font-size: 12px !important;
         }
 
+        .form-modal .hs-form .hs-richtext p {
+            color: var(--silver) !important;
+        }
+
         .form-modal .hs-form .legal-consent-container .hs-form-booleancheckbox label {
-            color: var(--slate) !important;
+            color: var(--silver) !important;
             font-size: 11px !important;
+        }
+
+        .form-modal .hs-form .legal-consent-container .hs-form-booleancheckbox label span {
+            color: var(--silver) !important;
+        }
+
+        .form-modal .hs-form .legal-consent-container p {
+            color: var(--silver) !important;
         }
 
         .form-modal .submitted-message {
@@ -558,15 +539,15 @@
             </a>
         </div>
 
-        <button class="connect-btn" onclick="toggleForm()">
-            <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-            Share Your Info
+        <button class="save-btn save-btn-primary" onclick="saveContact()">
+            <svg viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
+            Save Contact
         </button>
 
         <div class="btn-row">
-            <button class="save-btn" onclick="saveContact()">
-                <svg viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
-                Save Contact
+            <button class="qr-btn" onclick="toggleForm()">
+                <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                Share Your Info
             </button>
             <button class="qr-btn" onclick="toggleQR()">
                 <svg viewBox="0 0 24 24"><path d="M3 11h8V3H3v8zm2-6h4v4H5V5zm8-2v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zm13-2h-2v3h-3v2h3v3h2v-3h3v-2h-3v-3zm-3 8v-2h-2v2h2zm4 0v-2h-2v2h2z"/></svg>
