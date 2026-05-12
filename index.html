@@ -609,11 +609,6 @@
             </a>
         </div>
 
-        <button class="connect-btn" onclick="saveContact()">
-            <svg viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67l2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2v9.67z"/></svg>
-            Save Contact
-        </button>
-
         <div class="btn-row">
             <button class="qr-btn" style="flex:1" onclick="toggleForm()">
                 <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
@@ -730,16 +725,6 @@
             });
         }
 
-        function saveContact() {
-            // Spec: docs/superpowers/specs/2026-05-11-chris-card-direct-vcard-architecture-design.md
-            // Single source of truth = static /chris.vcf served from same domain.
-            const a = document.createElement('a');
-            a.href = 'chris.vcf';
-            a.download = 'Christopher-Sharkey.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
 
         function toggleQR() {
             document.getElementById('qrOverlay').classList.toggle('active');
