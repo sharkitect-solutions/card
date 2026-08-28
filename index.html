@@ -511,9 +511,10 @@
             margin-bottom: 20px;
         }
 
-        .qr-modal svg {
-            width: 200px;
-            height: 200px;
+        .qr-modal svg,
+        .qr-modal img {
+            width: 220px;
+            height: 220px;
             margin: 0 auto 20px;
             display: block;
         }
@@ -628,9 +629,7 @@
         <div class="qr-modal" onclick="event.stopPropagation()">
             <h3>SCAN TO CONNECT</h3>
             <p>Point your camera at the code</p>
-            <svg viewBox="0 0 41 41" xmlns="http://www.w3.org/2000/svg" id="qrSvg">
-                <!-- QR code will be injected by JavaScript -->
-            </svg>
+            <img src="qr-code.png" id="qrImg" alt="QR code - scan to save Christopher Sharkey's contact">
             <button class="qr-close" onclick="toggleQR()">Close</button>
         </div>
     </div>
@@ -730,50 +729,6 @@
             document.getElementById('qrOverlay').classList.toggle('active');
         }
 
-        // Generate QR code client-side
-        function generateQR() {
-            const url = 'https://sharkitect-solutions.github.io/card/';
-            const svg = document.getElementById('qrSvg');
-
-            // QR encoding for the URL using a lightweight approach
-            // We'll use the pre-generated SVG path from build time
-            // Fetch the QR SVG and inject it
-            fetch('qr-code.svg')
-                .then(r => r.text())
-                .then(svgText => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(svgText, 'image/svg+xml');
-                    const paths = doc.querySelectorAll('path');
-                    const rect = doc.querySelector('rect');
-
-                    // Clear existing content
-                    svg.innerHTML = '';
-
-                    // Add background
-                    if (rect) {
-                        const bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-                        bgRect.setAttribute('width', '41');
-                        bgRect.setAttribute('height', '41');
-                        bgRect.setAttribute('fill', '#1A1A1A');
-                        svg.appendChild(bgRect);
-                    }
-
-                    // Add QR paths
-                    paths.forEach(path => {
-                        const newPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                        newPath.setAttribute('d', path.getAttribute('d'));
-                        newPath.setAttribute('fill', '#29ABE2');
-                        svg.appendChild(newPath);
-                    });
-                })
-                .catch(() => {
-                    // Fallback: show URL text if SVG fails to load
-                    svg.innerHTML = '<text x="20.5" y="22" text-anchor="middle" fill="#29ABE2" font-size="3" font-family="Montserrat">QR Loading...</text>';
-                });
-        }
-
-        // Load QR on page ready
-        generateQR();
     </script>
 </body>
 </html>
