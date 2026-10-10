@@ -713,11 +713,11 @@
                     document.querySelector('.form-modal h3').style.display = 'none';
                     document.getElementById('formSuccess').style.display = 'block';
                 } else {
-                    return response.json().then(function(err) {
+                    return response.text().then(function(err) {
                         console.error('HubSpot error:', err);
                         btn.textContent = 'Submit';
                         btn.disabled = false;
-                        alert('Error: ' + (err.message || JSON.stringify(err)));
+                        alert('Something went wrong. Please try again.');
                     });
                 }
             })
