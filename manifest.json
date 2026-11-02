@@ -1,13 +1,13 @@
 {
   "name": "Christopher Sharkey | Sharkitect Digital",
   "short_name": "Sharkitect",
-  "description": "Christopher Sharkey — Founder & CEO, Sharkitect Digital. AI Transformation Partner.",
+  "description": "Christopher Sharkey, Founder & CEO, AI Adoption Specialist, Sharkitect Digital.",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#1A1A1A",
-  "theme_color": "#1A1A1A",
+  "background_color": "#060a14",
+  "theme_color": "#060a14",
   "icons": [
     {
       "src": "icon-192.png",
