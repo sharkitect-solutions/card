@@ -146,7 +146,7 @@ html[lang=es] .act--ai{order:-2}html[lang=es] [data-wa]{order:-1}
     </div>
   </div>
 
-  <div class="hero" role="img" aria-label="Christopher Sharkey" data-t-aria="photo">
+  <div class="hero" role="img" aria-label="Christopher Sharkey">
     <div class="hero__photo"></div>
     <div class="hero__glow"></div>
   </div>
@@ -163,7 +163,7 @@ html[lang=es] .act--ai{order:-2}html[lang=es] [data-wa]{order:-1}
     <span data-t="save">Save My Contact</span>
   </button>
 
-  <nav class="acts rise" style="animation-delay:.44s" aria-label="Contact">
+  <nav class="acts rise" style="animation-delay:.44s" aria-label="Contact" data-t-aria="contact">
     <a class="act act--wide act--ai" href="tel:+18164430826">
       <span class="wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
       <div><small data-t="ai_s">Call</small><b data-t="ai">Talk to my AI assistant</b></div>
@@ -248,10 +248,12 @@ html[lang=es] .act--ai{order:-2}html[lang=es] [data-wa]{order:-1}
 <script>
 (function(){
   var T={
-    en:{title1:'Founder & CEO',title2:'AI Adoption Specialist',motto:'No hype. We teach you how it works.',save:'Save My Contact',ai_s:'Call',ai:'Talk to my AI assistant',sms_s:'Text me',book_s:'Book',book:'A meeting with me',web_s:'Website',web:'Visit our site',mail_s:'Email',share:'Share your info',eye:'The card you just opened? We build those.',pitch:'Fully customizable, not a template.',fine:'Sample cards: made-up people and businesses, not customers. Photos made with AI. Tap one to try it.',get:'Get your card',qr_h:'Save My Contact',qr_p:"Point another phone's camera at this code, then tap the link.",qr_alt:"QR code that saves Christopher Sharkey's contact",form_h:'Share your info',f_first:'First name',f_last:'Last name',f_email:'Email (required)',f_phone:'Phone number',f_company:'Company name',send:'Send',done:"Got it. Save my contact too, and let's get on the calendar.",done_cta:'Book a meeting',close:'Close',sending:'Sending...',oops:'That did not go through. Try again, or text me at (816) 313-2808.',consent:'By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided (e.g., scheduling, updates). Consent is not required for purchase. Reply STOP to opt out.',page:'https://www.sharkitectdigital.com/digital-business-card?from=card',wa:'Hi Chris, you shared your card with me.'},
-    es:{title1:'Fundador y CEO',title2:'Especialista en adopción de IA',motto:'No te vendemos humo. Te explicamos cómo funciona.',save:'Guardar mi contacto',ai_s:'Llama',ai:'Habla con mi asistente de IA',sms_s:'Mensaje de texto',book_s:'Agenda',book:'Una reunión conmigo',web_s:'Sitio web',web:'Visita nuestro sitio',mail_s:'Correo',share:'Comparte tus datos',eye:'¿La tarjeta que acabas de abrir? La armamos nosotros.',pitch:'Totalmente a tu medida, sin plantillas.',fine:'Tarjetas de muestra: personas y negocios inventados, no son clientes. Fotos hechas con IA. Toca una para probarla.',get:'Pide la tuya',qr_h:'Guardar mi contacto',qr_p:'Apunta la cámara de otro celular a este código y toca el enlace.',qr_alt:'Código QR que guarda el contacto de Christopher Sharkey',form_h:'Comparte tus datos',f_first:'Nombre',f_last:'Apellido',f_email:'Correo (obligatorio)',f_phone:'Teléfono',f_company:'Empresa',send:'Enviar',done:'Listo. Guarda también mi contacto y agendemos.',done_cta:'Agenda una reunión',close:'Cerrar',sending:'Enviando...',oops:'No se envió. Inténtalo otra vez o mándame un mensaje al (816) 313-2808.',consent:'Al marcar esta casilla, autorizo a Sharkitect Digital a enviarme mensajes de texto informativos, automatizados y recurrentes al número que di (por ejemplo, citas y novedades). Este consentimiento no es necesario para comprar. Responde STOP para dejar de recibirlos.',page:'https://www.sharkitectdigital.com/tarjeta-digital',wa:'Hola Chris, me compartiste tu tarjeta.'}
+    en:{title1:'Founder & CEO',title2:'AI Adoption Specialist',motto:'No hype. We teach you how it works.',save:'Save My Contact',ai_s:'Call',ai:'Talk to my AI assistant',sms_s:'Text me',book_s:'Book',book:'A meeting with me',web_s:'Website',web:'Visit our site',mail_s:'Email',share:'Share your info',eye:'The card you just opened? We build those.',pitch:'Fully customizable, not a template.',fine:'Sample cards: made-up people and businesses, not customers. Photos made with AI. Tap one to try it.',get:'Get your card',qr_h:'Save My Contact',qr_p:"Point another phone's camera at this code, then tap the link.",qr_alt:"QR code that saves Christopher Sharkey's contact",form_h:'Share your info',f_first:'First name',f_last:'Last name',f_email:'Email (required)',f_phone:'Phone number',f_company:'Company name',send:'Send',done:"Got it. Save my contact too, and let's get on the calendar.",done_cta:'Book a meeting',close:'Close',contact:'Contact',sending:'Sending...',oops:'That did not go through. Try again, or text me at (816) 313-2808.',consent:'By checking this box, I authorize Sharkitect Digital to send me recurring automated informational text messages at the number I provided (e.g., scheduling, updates). Consent is not required for purchase. Reply STOP to opt out.',page:'https://www.sharkitectdigital.com/digital-business-card?from=card',wa:'Hi Chris, you shared your card with me.'},
+    es:{title1:'Fundador y CEO',title2:'Especialista en adopción de IA',motto:'No te vendemos humo. Te explicamos cómo funciona.',save:'Guardar mi contacto',ai_s:'Llama',ai:'Habla con mi asistente de IA',sms_s:'Escríbeme',book_s:'Agenda',book:'Una reunión conmigo',web_s:'Sitio web',web:'Visita nuestro sitio',mail_s:'Correo',share:'Comparte tus datos',eye:'¿La tarjeta que acabas de abrir? La armamos nosotros.',pitch:'Totalmente a tu medida, sin plantillas.',fine:'Tarjetas de muestra: personas y negocios inventados, no son clientes. Fotos hechas con IA. Toca una para probarla.',get:'Pide la tuya',qr_h:'Guardar mi contacto',qr_p:'Apunta la cámara de otro celular a este código y toca el enlace.',qr_alt:'Código QR que guarda el contacto de Christopher Sharkey',form_h:'Comparte tus datos',f_first:'Nombre',f_last:'Apellido',f_email:'Correo (obligatorio)',f_phone:'Teléfono',f_company:'Empresa',send:'Enviar',done:'Listo. Guarda también mi contacto y agendemos.',done_cta:'Agenda una reunión',close:'Cerrar',contact:'Contacto',sending:'Enviando...',oops:'No se envió. Inténtalo otra vez o mándame un mensaje al (816) 313-2808.',consent:'Al marcar esta casilla, autorizo a Sharkitect Digital a enviarme mensajes de texto informativos, automatizados y recurrentes al número que di (por ejemplo, citas y novedades). Este consentimiento no es necesario para comprar. Responde STOP para dejar de recibirlos.',page:'https://www.sharkitectdigital.com/tarjeta-digital',wa:'Hola Chris, me compartiste tu tarjeta.'}
   };
   var ORDER=['electrical','salon','plumbing','lawyer','real-estate','insurance','doctor'];
+  var TRADE={en:{electrical:'Sample card: electrician',salon:'Sample card: salon',plumbing:'Sample card: plumber',lawyer:'Sample card: lawyer','real-estate':'Sample card: real estate',insurance:'Sample card: insurance',doctor:'Sample card: doctor'},
+    es:{electrical:'Tarjeta de muestra: electricidad',salon:'Tarjeta de muestra: salón',plumbing:'Tarjeta de muestra: plomería',lawyer:'Tarjeta de muestra: abogacía','real-estate':'Tarjeta de muestra: bienes raíces',insurance:'Tarjeta de muestra: seguros',doctor:'Tarjeta de muestra: medicina'}};
   var DEMO='https://sharkitect-sample-cards.vercel.app/';
   var strip=document.getElementById('strip'), lang='en';
 
@@ -266,7 +268,7 @@ html[lang=es] .act--ai{order:-2}html[lang=es] [data-wa]{order:-1}
     document.querySelectorAll('[data-lang]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===lang?'true':'false')});
     document.getElementById('getCard').href=t.page;
     document.querySelector('[data-wa]').href='https://wa.me/19138995254?text='+encodeURIComponent(t.wa);
-    strip.innerHTML=ORDER.map(function(k){return '<a href="'+DEMO+k+'-'+lang+'/" target="_blank" rel="noopener" aria-label="'+k+'"><img src="assets/samples/'+k+'-'+lang+'.jpg" alt="" width="360" height="778"></a>'}).join('');
+    strip.innerHTML=ORDER.map(function(k){return '<a href="'+DEMO+k+'-'+lang+'/" target="_blank" rel="noopener" aria-label="'+TRADE[lang][k]+'"><img src="assets/samples/'+k+'-'+lang+'.jpg" alt="" width="360" height="778"></a>'}).join('');
     try{localStorage.setItem('card-lang',lang)}catch(e){}
     if(tsId!==null&&window.turnstile){turnstile.remove(tsId);tsId=null;tsToken='';renderTs()}
   }
@@ -275,9 +277,14 @@ html[lang=es] .act--ai{order:-2}html[lang=es] [data-wa]{order:-1}
   function renderTs(){
     if(tsId!==null||!window.turnstile)return;
     tsId=turnstile.render('#ts',{sitekey:TS_KEY,theme:'dark',size:'flexible',language:lang,
-      callback:function(t){tsToken=t;if(tsWaiting){tsWaiting=false;clearTimeout(tsTimer);sendForm()}},
+      callback:function(t){
+        tsToken=t;
+        document.getElementById('formErr').hidden=true;
+        if(tsWaiting){tsWaiting=false;clearTimeout(tsTimer);sendForm()}
+      },
       'expired-callback':function(){tsToken=''},
-      'error-callback':function(){tsToken='';if(tsWaiting)formFailed();return true}
+      /* the widget retries on its own after an error, so only the timer below gives up */
+      'error-callback':function(){tsToken='';return true}
     });
   }
   window.onTsReady=renderTs;
@@ -332,7 +339,7 @@ html[lang=es] .act--ai{order:-2}html[lang=es] [data-wa]{order:-1}
     document.getElementById('formErr').hidden=true;
     if(tsToken){sendForm();return}
     tsWaiting=true;loadTs();
-    tsTimer=setTimeout(formFailed,15000);
+    tsTimer=setTimeout(formFailed,45000);
   });
 
   /* the night sky: same constellation language as the website */
